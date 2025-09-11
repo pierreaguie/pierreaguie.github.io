@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Firstname Lastname</title>
+
+    <!-- Minimalist stylesheet -->
+    <style>
+      :root{
+        --bg: #000000;
+        --fg: #ffffff;
+        --max-width: 70ch;
+        --gap: 1.25rem;
+      }
+
+      html,body{height:100%;}
+      html{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+      *,*::before,*::after{box-sizing:inherit}
+
+      body{
+        margin:0;
+        background:var(--bg);
+        color:var(--fg);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        line-height:1.55;
+        padding:clamp(1rem,4vw,3rem);
+      }
+
+      .container{
+        max-width:var(--max-width);
+        width:100%;
+      }
+
+      header{
+        margin-bottom:var(--gap);
+      }
+
+      h1{
+        margin:0 0 .25rem 0;
+        font-weight:600;
+        font-size:clamp(1.6rem,4vw,2.8rem);
+        letter-spacing:-0.01em;
+      }
+
+      .subtitle{
+        margin:0;
+        font-weight:400;
+        opacity:0.8;
+        font-size:clamp(.9rem,2vw,1.05rem);
+      }
+
+      main p{margin:0 0 1rem 0;}
+
+      /* subtle focus-visible outline for keyboard users */
+      a:focus{outline:2px dashed var(--fg);outline-offset:4px}
+
+      /* small footer */
+      footer{
+        margin-top:calc(var(--gap) * 1.25);
+        font-size:.85rem;
+        opacity:0.7;
+      }
+
+      @media (min-width:900px){
+        body{padding:4rem}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" role="main">
+      <header>
+        <h1>Firstname Lastname</h1>
+        <p class="subtitle">Minimalist personal site</p>
+      </header>
+
+      <main>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia, urna at vulputate pellentesque, neque justo pretium arcu, non fringilla orci lectus id orci. Integer a lectus sed erat tincidunt convallis. Curabitur vitae arcu id urna facilisis luctus. Nullam eget sem lectus.</p>
+        <p>Praesent sed neque non arcu elementum efficitur. Phasellus a velit ut risus tristique efficitur. Maecenas dictum, nisl quis congue laoreet, sapien magna efficitur nibh, vel interdum lectus velit in mi. Sed id risus sit amet lorem gravida volutpat.</p>
+      </main>
+
+      <footer>
+        <p>© <span id="year"></span> Firstname Lastname</p>
+      </footer>
+    </div>
+
+    <script>
+      // small nicety: auto-fill current year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
